@@ -4,11 +4,11 @@ import Home from '../views/Home.vue'
 import login from '../views/login.vue'
 import crud from '../views/crud.vue'
 import update from '../components/updateForm.vue'
+import upload from '../components/imageUpload.vue'
 
 Vue.use(VueRouter)
 
-  const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'Home',
     component: Home
@@ -19,7 +19,7 @@ Vue.use(VueRouter)
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import( /* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/login',
@@ -35,7 +35,12 @@ Vue.use(VueRouter)
     path: '/update',
     name: 'update',
     component: update
-  }
+  },
+  {
+    path: '/upload',
+    name: 'image',
+    component: upload
+  },
 ]
 
 const router = new VueRouter({
